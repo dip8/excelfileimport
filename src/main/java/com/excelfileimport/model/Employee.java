@@ -1,9 +1,6 @@
 package com.excelfileimport.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +10,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name="EMPLOYEE")
+@Entity
+@Table(name = "EMPLOYEE")
 
 public class Employee {
     @Id
@@ -24,6 +22,7 @@ public class Employee {
 
     private String empLastName;
 
+    @Temporal(TemporalType.DATE)
     private Date empDateofBirth;
 
     private double empSalary;
